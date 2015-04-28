@@ -1,0 +1,49 @@
+  <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <tr>
+        <div class="modal-body">
+           <ul class="list-inline">
+                <li ng-repeat="item in items">
+                    <a ng-click="content.type = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ content.type }}</b>
+        </div>
+        </tr>
+       
+
+        <div class="list-inline">
+        <ul >
+          <h1>input your activity:</h1> 
+          
+            <textarea type="text" ng-model="content.activity" placeholder="type your activity" ngMinlength="8"> </textarea>
+             {{content.activity}}
+             </ul>
+        </div>
+
+        <br>
+        <div class="list-inline">
+        <ul>
+        <calendar-Dir ng-model="content.time">
+       <h1> please chose the time : </h1> <input type="text" value="{{content.time}}" id="datetimepicker" >
+       
+        </calendar-Dir>
+         </ul>
+        </div>
+
+            
+            <br>
+            <ul >
+            <h1> please chose the address : </h1>
+                <div map-Dir ng-model="content.address" class="list-inline">
+               
+
+                </div> 
+
+           </ul> 
+
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>

@@ -1,0 +1,56 @@
+<div>
+	
+<div class="panel panel-default">
+   <div class="panel-heading">
+      <h3 class="panel-title" align="center">
+         this is a demo for angularjs and bootstrps  
+      </h3>
+   </div>
+   <div class="panel-body">
+   
+<div>
+<td>
+<select ng-model="orderProp" >
+        <option value="time">order by time</option>
+        <option value="-time">desc</option>
+      </select>
+<input type="text" placeholder="type somethings" ng-model="query">
+
+ <button class="btn btn-default" ng-click="open('lg')">add the new activity</button>
+
+</td>
+</div>
+
+
+   </div>
+</div>
+
+<table class="table table-hover">
+   <caption>your plans list</caption>
+   <thead>
+      <tr>
+         <th>time</th>
+         <th>type</th>
+         <th>activity</th>
+         <th>address</th>
+           <th>del</th>
+      </tr>
+   </thead>
+   <tbody ng-repeat="content in contents | filter:query | orderBy:orderProp">
+      <tr>
+         <td>{{content.time}}</td>
+           <td>{{content.type}}</td>
+         <td>{{content.activity}}</td>
+         <td >
+         <u ng-mouseenter="openMap('lg')" >address </u> 
+         </td>
+         <td>  <button type="button" class="btn btn-default btn-sm" ng-click="del()">
+      del
+   </button></td>
+         
+      </tr>
+   </tbody>
+</table>
+ <div class="panel-footer" align="center"> by Peng Yin 2015</div>
+
+</div>
